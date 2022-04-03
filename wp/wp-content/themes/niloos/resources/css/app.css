@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "custom.css";
+
+.entry-content .alignwide {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.md\:text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.title-text {
+  font-size: calc(4vw + 14px) !important;
+}
+
+.sub-title-text {
+  font-size: calc(1.8vw + 12px) !important;
+}
+
+main > .container {
+  width: 94% !important;
+  max-width: 94% !important;
+}

@@ -1,0 +1,1 @@
+<div class="leading-none leading-tight z-20 mt-8 md:-mt-20 md:max-w-40vw"></div>
