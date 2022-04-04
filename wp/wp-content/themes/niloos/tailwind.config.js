@@ -32,18 +32,10 @@ module.exports = {
         tailpress.theme("settings.color.palette", theme)
       ),
       width: {
-        '1/31': '31%',
       },
       maxWidth: {
-        'slider': '380px',
-        'mslider': '272px',
-        'cardAvatar': '30px',
-        '40vw': '40vw'
       },
       minWidth: {
-        'slider': '380px',
-        'mslider': '272px',
-        'cardAvatar': '30px'
       },
       rotate: {
         '270': '270deg',

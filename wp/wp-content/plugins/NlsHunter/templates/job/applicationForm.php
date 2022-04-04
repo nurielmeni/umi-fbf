@@ -9,41 +9,36 @@ $jobOptions = $jobs;
             <div class="form-header">
                 <h2 class="form-title"><?= __('My friend details:', 'NlsHunter') ?></h2>
             </div>
-            <div class="form-body flex space-between align-center wrap">
-                <span class="remove"></span>
+            <div class="form-body flex space-between align-center flex-wrap md:gap-3">
                 <!--  NAME -->
-                <div class="nls-apply-field">
-                    <label for="friend-name--0"><?= __('Full Name', 'NlsHunter') ?></label>
-                    <input type="text" id="friend-name--0" name="friend-name[]" validator="required" class="" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'class' => '',
+                    'name' => 'friend-name',
+                    'validators' => ['required'],
+                    'placeHolder' => __('Full Name', 'NlsHunter')
+                ]) ?>
 
                 <!--  CELL PHONE -->
-                <div class="nls-apply-field">
-                    <label for="friend-cell--0"><?= __('Cell', 'NlsHunter') ?></label>
-                    <input type="tel" id="friend-cell--0" name="friend-cell[]" class="ltr" validator="required phone" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'name' => 'friend-cell',
+                    'validators' => ['required', 'phone'],
+                    'placeHolder' => __('Cell', 'NlsHunter')
+                ]) ?>
 
                 <!--  CITY -->
-                <div class="nls-apply-field">
-                    <label for="friend-area--0"><?= __('Area', 'NlsHunter') ?></label>
-                    <input type="text" id="friend-area--0" name="friend-area[]" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'name' => 'friend-area',
+                    'validators' => ['required'],
+                    'placeHolder' => __('Area', 'NlsHunter')
+                ]) ?>
 
                 <!-- JOB SELECT -->
-                <div class="nls-apply-field  select-wrapper">
-                    <label for="friend-job-code--0"><?= __('What job?', 'NlsHunter') ?></label>
-
-                    <select id="friend-job-code--0" name="friend-job-code[]">
-                        <?php foreach ($jobs as $job) : ?>
-                            <option value="<?= $job['jobCode'] ?>"><?= $job['jobTitle'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsSelectField', [
+                    'name' => 'friend-job-code',
+                    'options' => $jobs,
+                    'selectWrapClass' => 'w-full md:w-48',
+                    'placeHolder' => __('What job?', 'NlsHunter')
+                ]) ?>
 
                 <!--  CV FILE 
                 <div class="nls-apply-field browse">

@@ -1,10 +1,6 @@
 var App = App || (
     function ($) {
-        var employersGrid = 'section.employers-grid';
-        var searchBoxButton = '.search-box button.search-btn';
-        var searchBoxInput = 'input#employer-search';
-        var loading = false;
-
+        var selectJob = '';
         function showSpinner() {
             $('.footer .spinner svg').removeClass('hidden');
         }
@@ -15,6 +11,23 @@ var App = App || (
 
         function clearResults() {
             $(employersGrid).html('');
+        }
+
+        function initSumoSelect(selectBoxItem) {
+            var name = $(selectBoxItem).attr('name') || '';
+            var placeholder = $(selectBoxItem).attr('placeholder') || '';
+
+            $('select.sumo[name="' + name + '"]').SumoSelect({
+                placeholder: placeholder,
+                clearAll: true,
+                search: true,
+                searchText: (rtl ? 'חפש ' : 'Search ') + placeholder,
+                noMatch: (rtl ? 'אין התאמות עבור "{0}"' : 'No matches for "{0}"')
+            });
+        }
+
+        function clearAllSelection(selectEl) {
+            $(selectEl).length && $(selectEl).get(0).sumo.unSelectAll();
         }
 
         function loadEmployers(page) {
@@ -59,18 +72,10 @@ var App = App || (
         $(document).ready(function () {
             ScrollTo && ScrollTo.add('#employers-loader .spinner', loadEmployers, 1);
 
-            $(searchBoxButton).on('click', function () {
-                $(this).data('search-phrase', $(searchBoxInput).val());
-                clearResults();
-                loadEmployers(-1);
-            });
+            $('.jobs-wrapper select.sumo').each(function () { initSumoSelect(this); });
+            clearAllSelection(areaSelect);
 
-            // Reset the search phrase
-            $(this).data('search-phrase', false);
         });
 
-        return {
-            loadEmployers: loadEmployers
-        }
     }
 )(jQuery)
