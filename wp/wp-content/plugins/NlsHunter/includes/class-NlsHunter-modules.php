@@ -42,20 +42,23 @@ class NlsHunter_modules
      */
     public function nlsApplicationForm_render()
     {
+        if (is_admin()) return '';
+
         $jobs = $this->model->getJobHunterExecuteNewQuery2();
-        $companies = [
-            ['id' => 0, 'name' => 'Company 0'],
-            ['id' => 1, 'name' => 'Company 1'],
-            ['id' => 2, 'name' => 'Company 2'],
+
+        $companyOptions = [
+            ['id' => 0, 'value' => 'Company 0'],
+            ['id' => 1, 'value' => 'Company 1'],
+            ['id' => 2, 'value' => 'Company 2'],
         ];
 
         ob_start();
 
         echo render('job/applicationForm', [
-            'jobs' => $jobs['list'],
+            'jobOptions' => $this->model->listItemsToSelectOptions($jobs['list'], 'JobCode', 'JobTitle'),
             'total' => $jobs['totalHits'],
             'model' => $this->model,
-            'companies' => $companies
+            'companyOptions' => $companyOptions
         ]);
 
         return ob_get_clean();

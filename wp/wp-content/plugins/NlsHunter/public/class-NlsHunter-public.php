@@ -145,6 +145,19 @@ class NlsHunter_Public
         wp_localize_script('nls-form-validation', 'frontend_ajax', ['url' => admin_url('admin-ajax.php')]);
     }
 
+
+    public function overlay_render()
+    {
+        ob_start();
+
+        echo '<p>This is the place</p>';
+        echo render('bgOverlay', ['src' => plugins_url('NlsHunter/public/images/blue_wave_mobile.png'), 'class' => 'z-10']);
+        echo render('bgOverlay', ['src' => plugins_url('NlsHunter/public/images/blue_wave_mobile.png'), 'class' => 'z-30']);
+
+        return ob_get_clean();
+    }
+
+
     /**
      * Helper function to write log messages
      */

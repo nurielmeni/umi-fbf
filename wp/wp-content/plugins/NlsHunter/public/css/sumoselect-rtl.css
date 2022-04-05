@@ -30,6 +30,14 @@ and open the template in the editor.
   margin-left: 0;
 }
 
+.nls-field.select .SumoSelect {
+  width: 100%;
+}
+
+.nls-field.select .SumoSelect > .CaptionCont {
+  border-radius: 6px;
+}
+
 .SumoSelect .select-all > label,
 .SumoSelect > .CaptionCont,
 .SumoSelect > .CaptionCont > label,

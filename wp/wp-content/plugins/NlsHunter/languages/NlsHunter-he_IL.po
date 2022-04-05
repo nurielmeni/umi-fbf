@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-03-22 00:17+0200\n"
-"PO-Revision-Date: 2022-03-22 00:17+0200\n"
+"POT-Creation-Date: 2022-04-05 12:05+0300\n"
+"PO-Revision-Date: 2022-04-05 12:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -22,182 +22,126 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: admin/class-NlsHunter-admin.php:157
+#: admin/class-NlsHunter-admin.php:156
 msgid "You do not have sufficient permissions to access this page."
 msgstr "אין לך הרשאות מספיקות כדי לגשת לעמוד זה."
 
-#: includes/Hunter/NlsHelper.php:102
+#: includes/Hunter/NlsHelper.php:100
 msgid "Select"
 msgstr "בחר"
 
-#: includes/class-NlsHunter-model.php:37
+#: includes/class-NlsHunter-model.php:36
 msgid "Could not create Model."
 msgstr "אין אפשרות ליצור מודל."
 
-#: includes/class-NlsHunter-model.php:38
+#: includes/class-NlsHunter-model.php:37
 #, fuzzy
 #| msgid "Error: NlsHunterFbf_model: "
 msgid "Error: NlsHunter_model: "
 msgstr "שגיאה: NlsHunterFbf_model: "
 
-#: includes/class-NlsHunter-model.php:165
+#: includes/class-NlsHunter-model.php:174
+#: includes/class-NlsHunter-model.php:178
 msgid "Could not init Card Services."
 msgstr "אין אפשרות להתחבר לשירותי Card"
 
-#: includes/class-NlsHunter-model.php:166
+#: includes/class-NlsHunter-model.php:175
+#: includes/class-NlsHunter-model.php:179
 msgid "Error: Card Services: "
 msgstr "שגיאה: שירותי כרטיס"
 
-#: includes/class-NlsHunter-model.php:185
+#: includes/class-NlsHunter-model.php:199
+#: includes/class-NlsHunter-model.php:202
 msgid "Could not init Directory Services."
 msgstr "אין אפשרות להתחבר לשירותי Directory"
 
-#: includes/class-NlsHunter-model.php:186
+#: includes/class-NlsHunter-model.php:200
 msgid "Error: Directory Services: "
 msgstr "שגיאה: שירותי מדריך"
 
-#: includes/class-NlsHunter-model.php:205
+#: includes/class-NlsHunter-model.php:221
+#: includes/class-NlsHunter-model.php:225
 msgid "Could not init Search Services."
 msgstr "אין אפשרות להתחבר לשירותי Search"
 
-#: includes/class-NlsHunter-model.php:206
+#: includes/class-NlsHunter-model.php:222
+#: includes/class-NlsHunter-model.php:226
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: public/class-NlsHunter-public.php:164
+#: public/class-NlsHunter-public.php:165
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-NlsHunter-public.php:165
+#: public/class-NlsHunter-public.php:166
 msgid "Job Code"
 msgstr "קוד משרה"
 
-#: public/class-NlsHunter-public.php:167 templates/applyForJobs.php:17
-#: templates/job/jobApplyForm.php:11
+#: public/class-NlsHunter-public.php:168 templates/job/applicationForm.php:17
+#: templates/job/applicationForm.php:67
 msgid "Full Name"
-msgstr "שם החבר:"
+msgstr "שם מלא"
 
-#: public/class-NlsHunter-public.php:168 templates/job/jobApplyForm.php:20
+#: public/class-NlsHunter-public.php:169
 msgid "Phone"
 msgstr "טלפון"
 
-#: public/class-NlsHunter-public.php:169 templates/job/jobApplyForm.php:29
+#: public/class-NlsHunter-public.php:170
 msgid "Email"
-msgstr "מייל חברה"
+msgstr "דוא\"ל"
 
-#: public/class-NlsHunter-public.php:379
+#: public/class-NlsHunter-public.php:387
 msgid "Applicant form data: "
 msgstr "פרטי החבר/ה שלי:"
 
-#: public/class-NlsHunter-public.php:403
+#: public/class-NlsHunter-public.php:416
 msgid "CV Applied from Reichman Jobs Fair Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
-#: templates/applyForJobs.php:10
+#: templates/form/nlsFileField.php:19 templates/form/nlsInputField.php:21
+#: templates/form/nlsSelectField.php:22
+msgid "Not required"
+msgstr "לא חובה"
+
+#: templates/job/applicationForm.php:9
 msgid "My friend details:"
 msgstr "פרטי החבר/ה שלי:"
 
-#: templates/applyForJobs.php:24
+#: templates/job/applicationForm.php:25
 msgid "Cell"
-msgstr "טלפון:"
+msgstr "טלפון"
 
-#: templates/applyForJobs.php:31
+#: templates/job/applicationForm.php:33
 msgid "Area"
-msgstr "מתגורר ב…"
+msgstr "אזור מגורים"
 
-#: templates/applyForJobs.php:38
+#: templates/job/applicationForm.php:41
 msgid "What job?"
-msgstr "התפקיד שתפור עליו:"
+msgstr "בול המשרה שחיפש/ה"
 
-#: templates/applyForJobs.php:51
+#: templates/job/applicationForm.php:46
 msgid "Append CV File"
 msgstr "צירוף קורות חיים (רק למשרות מטה)"
 
-#: templates/applyForJobs.php:66
+#: templates/job/applicationForm.php:59
 msgid "My details:"
 msgstr "הפרטים שלי:"
 
-#: templates/applyForJobs.php:71
-msgid "My Name"
-msgstr "שמי:"
-
-#: templates/applyForJobs.php:78
+#: templates/job/applicationForm.php:75
 msgid "Employee ID"
-msgstr "מזהה מעסיק"
+msgstr "מס' עובד/ת"
 
-#: templates/applyForJobs.php:85
-msgid "Company email"
-msgstr "אימייל פרטי:"
+#: templates/job/applicationForm.php:83
+msgid "Private email"
+msgstr ""
 
-#: templates/applyForJobs.php:97
+#: templates/job/applicationForm.php:91
+msgid "Company"
+msgstr "חברה"
+
+#: templates/job/applicationForm.php:102
 msgid "* By the terms"
 msgstr "* כפוף לתקנון"
-
-#: templates/employer/employerDescription.php:6
-msgid "Company Website:"
-msgstr "אתר החברה:"
-
-#: templates/employer/employerNotFound.php:3
-#, fuzzy
-#| msgid "Not Found: The requested Job Code was not found."
-msgid "Not Found: The requested Employer was not found."
-msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
-
-#: templates/employer/employerTitle.php:8
-msgid "To employer page"
-msgstr "לעמוד המעסיק"
-
-#: templates/employer/employersGrid.php:1
-msgid "Employers List"
-msgstr "רשימת מעסיקים"
-
-#: templates/job/jobApplyForm.php:2
-msgid "Submit Application"
-msgstr "הגשת מועמדות"
-
-#: templates/job/jobApplyForm.php:36
-msgid "Upload CV"
-msgstr "העלאת קובץ קו”ח"
-
-#: templates/job/jobApplyForm.php:38
-msgid "Select file"
-msgstr "בחר קובץ"
-
-#: templates/job/jobApplyForm.php:45
-msgid "Send"
-msgstr "שלח"
-
-#: templates/job/jobCardFooter.php:4
-msgid "More Details"
-msgstr "לפרטים נוספים"
-
-#: templates/job/jobList.php:4
-msgid "Open positions by area"
-msgstr "משרות פתוחות לפי תחום לימוד"
-
-#: templates/job/jobList.php:7
-msgid "Select Area"
-msgstr "בחר תחום לימוד"
-
-#: templates/job/jobList.php:12
-msgid "Open Positions"
-msgstr "משרות פתוחות"
-
-#: templates/job/jobNotFound.php:3
-msgid "Not Found: The requested Job Code was not found."
-msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
-
-#: templates/jobFairBanner.php:7
-msgid "All Fair Jobs"
-msgstr "לכל משרות היריד"
-
-#: templates/jobFairBanner.php:10
-msgid "Search By Employer"
-msgstr "חיפוש לפי מעסיק"
-
-#: templates/jobFairBanner.php:15
-msgid "Search"
-msgstr "חיפוש"
 
 #: templates/mail/mailApply.php:82
 msgid "Applied CV from Jobs Site"
@@ -227,11 +171,6 @@ msgstr "הפרטים נקלטו בהצלחה"
 msgid "Back"
 msgstr "חזור"
 
-#: templates/nlsFileField.php:19 templates/nlsInputField.php:20
-#: templates/nlsSelectField.php:21
-msgid "Not required"
-msgstr "לא חובה"
-
 #. Plugin Name of the plugin/theme
 #, fuzzy
 #| msgid "NlsHunterFbf"
@@ -245,6 +184,59 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#~ msgid "My Name"
+#~ msgstr "שמי:"
+
+#~ msgid "Company Website:"
+#~ msgstr "אתר החברה:"
+
+#, fuzzy
+#~| msgid "Not Found: The requested Job Code was not found."
+#~ msgid "Not Found: The requested Employer was not found."
+#~ msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
+
+#~ msgid "To employer page"
+#~ msgstr "לעמוד המעסיק"
+
+#~ msgid "Employers List"
+#~ msgstr "רשימת מעסיקים"
+
+#~ msgid "Submit Application"
+#~ msgstr "הגשת מועמדות"
+
+#~ msgid "Upload CV"
+#~ msgstr "העלאת קובץ קו”ח"
+
+#~ msgid "Select file"
+#~ msgstr "בחר קובץ"
+
+#~ msgid "Send"
+#~ msgstr "שלח"
+
+#~ msgid "More Details"
+#~ msgstr "לפרטים נוספים"
+
+#~ msgid "Open positions by area"
+#~ msgstr "משרות פתוחות לפי תחום לימוד"
+
+#~ msgid "Select Area"
+#~ msgstr "בחר תחום לימוד"
+
+#~ msgid "Open Positions"
+#~ msgstr "משרות פתוחות"
+
+#~ msgid "Not Found: The requested Job Code was not found."
+#~ msgstr "לא נמצא: משרה עם קוד המשרה המבוקש, לא נמצאה."
+
+#~ msgid "All Fair Jobs"
+#~ msgstr "לכל משרות היריד"
+
+#~ msgid "Search By Employer"
+#~ msgstr "חיפוש לפי מעסיק"
+
+#~ msgid "Search"
+#~ msgstr "חיפוש"
 
 #~ msgid "CV File"
 #~ msgstr "קובץ קורות חיים"

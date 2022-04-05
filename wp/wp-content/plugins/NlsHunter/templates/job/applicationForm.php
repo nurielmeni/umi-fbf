@@ -1,18 +1,18 @@
 <?php
 require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
-$jobOptions = $jobs;
 ?>
-<form class="nls-apply-for-jobs text-white" name="nls-apply-for-jobs nls-box-shadow">
-    <input type="hidden" name="sid" class="sid-hidden-field" value="<?= $supplierId ?>">
+<form class="nls-apply-for-jobs relative z-30 text-primary mt-8" name="nls-apply-for-jobs nls-box-shadow">
+    <input type="hidden" name="sid" class="sid-hidden-field" value="<?= $model->nlsGetSupplierId() ?>">
     <div class="form-section">
         <div class="friends-details">
-            <div class="form-header">
+            <div class="form-header text-white">
                 <h2 class="form-title"><?= __('My friend details:', 'NlsHunter') ?></h2>
             </div>
-            <div class="form-body flex space-between align-center flex-wrap md:gap-3">
+            <div class="form-body flex justify-space-between align-center flex-wrap gap-3">
                 <!--  NAME -->
                 <?= render('form/nlsInputField', [
-                    'class' => '',
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
                     'name' => 'friend-name',
                     'validators' => ['required'],
                     'placeHolder' => __('Full Name', 'NlsHunter')
@@ -20,6 +20,8 @@ $jobOptions = $jobs;
 
                 <!--  CELL PHONE -->
                 <?= render('form/nlsInputField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
                     'name' => 'friend-cell',
                     'validators' => ['required', 'phone'],
                     'placeHolder' => __('Cell', 'NlsHunter')
@@ -27,6 +29,8 @@ $jobOptions = $jobs;
 
                 <!--  CITY -->
                 <?= render('form/nlsInputField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
                     'name' => 'friend-area',
                     'validators' => ['required'],
                     'placeHolder' => __('Area', 'NlsHunter')
@@ -34,63 +38,69 @@ $jobOptions = $jobs;
 
                 <!-- JOB SELECT -->
                 <?= render('form/nlsSelectField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
                     'name' => 'friend-job-code',
-                    'options' => $jobs,
-                    'selectWrapClass' => 'w-full md:w-48',
+                    'options' => $jobOptions,
+                    'value' => null,
+                    'selectWrapClass' => 'w-full',
                     'placeHolder' => __('What job?', 'NlsHunter')
                 ]) ?>
 
                 <!--  CV FILE 
-                <div class="nls-apply-field browse">
-                    <label for="friend-cv--0"><span class="text-button add-resume"><?= __('Append CV File', 'NlsHunter') ?></span></label>
-                    <input type="file" id="friend-cv--0" name="friend-cv[]" hidden class="ltr" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
-                -->
+<div class="nls-apply-field browse">
+    <label for="friend-cv--0"><span class="text-button add-resume"><?= __('Append CV File', 'NlsHunter') ?></span></label>
+    <input type="file" id="friend-cv--0" name="friend-cv[]" hidden class="ltr" aria-invalid="false" aria-required="true">
+    <div class="help-block"></div>
+</div>
+-->
             </div>
             <div class="form-footer">
             </div>
         </div>
     </div>
-    <div class="form-section">
+    <div class="form-section mt-2">
         <div class="employee-details">
-            <div class="form-header">
+            <div class="form-header text-white">
                 <h2 class="form-title"><?= __('My details:', 'NlsHunter') ?></h2>
             </div>
-            <div class="form-body flex align-center wrap">
+            <div class="form-body flex justify-space-between align-center flex-wrap gap-3">
                 <!--  EMPLOYEE NAME -->
-                <div class="nls-apply-field">
-                    <label for="employee-name"><?= __('My Name', 'NlsHunter') ?></label>
-                    <input type="text" name="employee-name" validator="required" class="" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
+                    'name' => 'employee-name',
+                    'validators' => ['required'],
+                    'placeHolder' => __('Full Name', 'NlsHunter')
+                ]) ?>
 
                 <!-- EMPLOYEE ID -->
-                <div class="nls-apply-field">
-                    <label for="employee-id"><?= __('Employee ID', 'NlsHunter') ?></label>
-                    <input type="text" name="employee-id" validator="required ISRID" class="ltr" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
+                    'name' => 'employee-id',
+                    'validators' => ['required'],
+                    'placeHolder' => __('Employee ID', 'NlsHunter')
+                ]) ?>
 
                 <!--  EMAIL -->
-                <div class="nls-apply-field employee-email">
-                    <label for="employee-email"><?= __('Company email', 'NlsHunter') ?></label>
-                    <input type="text" name="employee-email" validator="required email" class="ltr text-right" aria-invalid="false" aria-required="true">
-                    <div class="help-block"></div>
-                </div>
+                <?= render('form/nlsInputField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'class' => 'py-1 px-2 rounded-md w-full',
+                    'name' => 'employee-email',
+                    'validators' => ['required email'],
+                    'placeHolder' => __('Email', 'NlsHunter')
+                ]) ?>
 
                 <!-- Company -->
-                <div class="nls-apply-field  select-wrapper">
-                    <label for="friend-job-code--0"><?= __('What job?', 'NlsHunter') ?></label>
+                <?= render('form/nlsSelectField', [
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'name' => 'company',
+                    'options' => $companyOptions,
+                    'value' => null,
+                    'selectWrapClass' => 'w-full',
+                    'placeHolder' => __('Company', 'NlsHunter')
+                ]) ?>
 
-                    <select id="friend-job-code--0" name="friend-job-code[]">
-                        <?php foreach ($companies as $company) : ?>
-                            <option value="<?= $company['id'] ?>"><?= $company['name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-
-                    <div class="help-block"></div>
-                </div>
             </div>
             <div class="form-footer">
             </div>

@@ -250,6 +250,8 @@ class NlsHunter
 
 		$plugin_public = new NlsHunter_Public($this, $this->get_version(), $debug);
 
+		add_action('reichman_site_before', [$plugin_public, 'overlay_render']);
+
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
 		//$this->loader->add_action('wp_body_open', $plugin_public, 'add_code_on_body_open');

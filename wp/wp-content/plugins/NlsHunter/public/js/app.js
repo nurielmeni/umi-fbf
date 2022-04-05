@@ -1,16 +1,14 @@
 var App = App || (
     function ($) {
-        var selectJob = '';
+        var selectJob = 'select[name="friend-job-code"]';
+        var selectCompany = 'select[name="company"]';
+
         function showSpinner() {
             $('.footer .spinner svg').removeClass('hidden');
         }
 
         function hideSpinner() {
             $('.footer .spinner svg').addClass('hidden');
-        }
-
-        function clearResults() {
-            $(employersGrid).html('');
         }
 
         function initSumoSelect(selectBoxItem) {
@@ -21,8 +19,8 @@ var App = App || (
                 placeholder: placeholder,
                 clearAll: true,
                 search: true,
-                searchText: (rtl ? 'חפש ' : 'Search ') + placeholder,
-                noMatch: (rtl ? 'אין התאמות עבור "{0}"' : 'No matches for "{0}"')
+                searchText: 'חפש ' + placeholder,
+                noMatch: 'אין התאמות עבור "{0}"'
             });
         }
 
@@ -70,11 +68,10 @@ var App = App || (
         }
 
         $(document).ready(function () {
-            ScrollTo && ScrollTo.add('#employers-loader .spinner', loadEmployers, 1);
-
-            $('.jobs-wrapper select.sumo').each(function () { initSumoSelect(this); });
-            clearAllSelection(areaSelect);
-
+            $('select.sumo').each(function () {
+                initSumoSelect(this);
+                clearAllSelection(this);
+            });
         });
 
     }

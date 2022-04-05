@@ -577,4 +577,17 @@ class NlsHunter_model
 
         return $this->nlsCards->employerGet($employerId);
     }
+
+    public function listItemsToSelectOptions($list, $id, $value)
+    {
+        $options = [];
+        if (!$list || !is_array($list) || !$id || !$value) return $options;
+
+        foreach ($list as  $key => $item) {
+            if (!is_object($item) || !property_exists($item, $id) || !property_exists($item, $value)) continue;
+            $options[] = ['id' => trim($item->$id), 'value' => trim($item->$value)];
+        }
+
+        return $options;
+    }
 }

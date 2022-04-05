@@ -8,6 +8,7 @@ module.exports = {
   content: [
     "./*/*.php",
     "./**/*.php",
+    "./template-parts/page-overlay.php",
     "../../plugins/NlsHunter/*/*.php",
     "../../plugins/NlsHunter/**/*.php",
     "../../plugins/NlsHunter/public/js/jobSearch.js",
@@ -32,6 +33,8 @@ module.exports = {
         tailpress.theme("settings.color.palette", theme)
       ),
       width: {
+        'input-lg': 'calc(25% - 9px)',
+        'input-md': 'calc(50% - 18px)'
       },
       maxWidth: {
       },
