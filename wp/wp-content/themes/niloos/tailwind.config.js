@@ -33,12 +33,23 @@ module.exports = {
         tailpress.theme("settings.color.palette", theme)
       ),
       width: {
-        'input-lg': 'calc(25% - 9px)',
-        'input-md': 'calc(50% - 18px)'
+        'input-lg': 'calc(25% - 10px)',
+        'input-md': 'calc(50% - 8px)'
       },
       maxWidth: {
+        '180': '180px',
+        '90': '90px',
+        '480': '480px'
       },
       minWidth: {
+      },
+      minHeight: {
+        '120': '120px',
+        '140': '140px',
+        '280': '280px',
+        '360': '360px',
+        '400': '400px',
+        '680': '680px'
       },
       rotate: {
         '270': '270deg',
@@ -98,7 +109,7 @@ module.exports = {
       sm: "640px",
       md: "768px",
       lg: "1280px",
-      xl: tailpress.theme("settings.layout.wideSize", theme),
+      xl: "1640px",
     },
   },
   plugins: [tailpress.tailwind],

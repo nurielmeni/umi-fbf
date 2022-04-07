@@ -23,7 +23,7 @@ include_once 'includes/headerLogo.php';
 		<?php do_action('reichman_header'); ?>
 
 		<header>
-			<div class="header-wrapper flex justify-center md:justify-start items-center bg-white">
+			<div class="header-wrapper flex md:justify-start items-center bg-white">
 				<?php if (wp_is_mobile()) : ?>
 					<figure class="aligncenter size-full"><img loading="lazy" width="457" height="131" src="<?= get_template_directory_uri() ?>/images/logos/logos_top_mobile.png" alt="" class="wp-image-25" srcset="<?= get_template_directory_uri() ?>/images/logos/logos_top_mobile.png 457w, <?= get_template_directory_uri() ?>/images/logos/logos_top_mobile-300x86.png 300w" sizes="(max-width: 457px) 100vw, 457px">
 					</figure>
@@ -34,7 +34,7 @@ include_once 'includes/headerLogo.php';
 			</div>
 		</header>
 
-		<div id="content" class="site-content flex-grow">
+		<div id="content" class="site-content flex-grow min-h-680 lg:min-h-auto pb-24 md:pb-52">
 
 
 

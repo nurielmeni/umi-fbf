@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-04-05 12:05+0300\n"
-"PO-Revision-Date: 2022-04-05 12:07+0300\n"
+"POT-Creation-Date: 2022-04-07 14:48+0300\n"
+"PO-Revision-Date: 2022-04-07 14:49+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -69,32 +69,32 @@ msgstr "אין אפשרות להתחבר לשירותי Search"
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: public/class-NlsHunter-public.php:165
+#: public/class-NlsHunter-public.php:178
 msgid "Supplier Id"
 msgstr "מזהה ספק"
 
-#: public/class-NlsHunter-public.php:166
+#: public/class-NlsHunter-public.php:179
 msgid "Job Code"
 msgstr "קוד משרה"
 
-#: public/class-NlsHunter-public.php:168 templates/job/applicationForm.php:17
-#: templates/job/applicationForm.php:67
+#: public/class-NlsHunter-public.php:181 templates/job/applicationForm.php:18
+#: templates/job/applicationForm.php:73
 msgid "Full Name"
 msgstr "שם מלא"
 
-#: public/class-NlsHunter-public.php:169
+#: public/class-NlsHunter-public.php:182
 msgid "Phone"
 msgstr "טלפון"
 
-#: public/class-NlsHunter-public.php:170
+#: public/class-NlsHunter-public.php:183 templates/job/applicationForm.php:91
 msgid "Email"
 msgstr "דוא\"ל"
 
-#: public/class-NlsHunter-public.php:387
+#: public/class-NlsHunter-public.php:400
 msgid "Applicant form data: "
 msgstr "פרטי החבר/ה שלי:"
 
-#: public/class-NlsHunter-public.php:416
+#: public/class-NlsHunter-public.php:429
 msgid "CV Applied from Reichman Jobs Fair Site"
 msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
@@ -107,39 +107,39 @@ msgstr "לא חובה"
 msgid "My friend details:"
 msgstr "פרטי החבר/ה שלי:"
 
-#: templates/job/applicationForm.php:25
+#: templates/job/applicationForm.php:27
 msgid "Cell"
 msgstr "טלפון"
 
-#: templates/job/applicationForm.php:33
+#: templates/job/applicationForm.php:36
 msgid "Area"
 msgstr "אזור מגורים"
 
-#: templates/job/applicationForm.php:41
+#: templates/job/applicationForm.php:46
 msgid "What job?"
 msgstr "בול המשרה שחיפש/ה"
 
-#: templates/job/applicationForm.php:46
+#: templates/job/applicationForm.php:51
 msgid "Append CV File"
 msgstr "צירוף קורות חיים (רק למשרות מטה)"
 
-#: templates/job/applicationForm.php:59
+#: templates/job/applicationForm.php:64
 msgid "My details:"
 msgstr "הפרטים שלי:"
 
-#: templates/job/applicationForm.php:75
+#: templates/job/applicationForm.php:82
 msgid "Employee ID"
 msgstr "מס' עובד/ת"
 
-#: templates/job/applicationForm.php:83
-msgid "Private email"
-msgstr ""
-
-#: templates/job/applicationForm.php:91
+#: templates/job/applicationForm.php:101
 msgid "Company"
 msgstr "חברה"
 
-#: templates/job/applicationForm.php:102
+#: templates/job/applicationForm.php:106
+msgid "Send >>"
+msgstr "שלחו >>"
+
+#: templates/job/applicationForm.php:114
 msgid "* By the terms"
 msgstr "* כפוף לתקנון"
 
@@ -210,9 +210,6 @@ msgstr "מני נוריאל"
 
 #~ msgid "Select file"
 #~ msgstr "בחר קובץ"
-
-#~ msgid "Send"
-#~ msgstr "שלח"
 
 #~ msgid "More Details"
 #~ msgstr "לפרטים נוספים"

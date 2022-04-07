@@ -1,5 +1,6 @@
 <?php
 include_once 'includes/customizerAdjustments.php';
+include_once 'includes/nlsFbfFlow.php';
 
 const NLS_FLOW_ELEMENTS = 3;
 
@@ -147,4 +148,12 @@ add_action('reichman_site_before',  'overlay_render');
 function overlay_render()
 {
 	include_once(__DIR__ . '/template-parts/page-overlay.php');
+}
+
+
+add_action('reichman_footer',  'flow_elements');
+
+function flow_elements()
+{
+	echo nls_fbf_flow(['num' => 3]);
 }

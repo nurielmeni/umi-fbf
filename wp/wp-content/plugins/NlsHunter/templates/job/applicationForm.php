@@ -1,14 +1,14 @@
 <?php
 require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
 ?>
-<form class="nls-apply-for-jobs relative z-30 text-primary mt-8" name="nls-apply-for-jobs nls-box-shadow">
+<form class="nls-apply-for-jobs relative z-30 text-primary w-10/12 mx-auto mt-8" name="nls-apply-for-jobs nls-box-shadow">
     <input type="hidden" name="sid" class="sid-hidden-field" value="<?= $model->nlsGetSupplierId() ?>">
-    <div class="form-section">
+    <div class="form-section mt-4">
         <div class="friends-details">
             <div class="form-header text-white">
                 <h2 class="form-title"><?= __('My friend details:', 'NlsHunter') ?></h2>
             </div>
-            <div class="form-body flex justify-space-between align-center flex-wrap gap-3">
+            <div class="form-body flex justify-between align-center flex-wrap gap-3">
                 <!--  NAME -->
                 <?= render('form/nlsInputField', [
                     'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
@@ -58,12 +58,12 @@ require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
             </div>
         </div>
     </div>
-    <div class="form-section mt-2">
+    <div class="form-section mt-4">
         <div class="employee-details">
             <div class="form-header text-white">
                 <h2 class="form-title"><?= __('My details:', 'NlsHunter') ?></h2>
             </div>
-            <div class="form-body flex justify-space-between align-center flex-wrap gap-3">
+            <div class="form-body flex justify-between align-center flex-wrap gap-3">
                 <!--  EMPLOYEE NAME -->
                 <?= render('form/nlsInputField', [
                     'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
@@ -102,14 +102,17 @@ require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
                 ]) ?>
 
             </div>
-            <div class="form-footer">
+            <div class="form-footer flex justify-center items-center">
+                <button class="apply-job border-2 py-1 px-12 mt-6 bg-white font-bold rounded-full"><?= __('Send >>', 'NlsHunter') ?></button>
             </div>
             <div class="form-footer">
                 <div class="help-block"></div>
             </div>
         </div>
+        <!--
         <div class="form-footer">
             <p><?= __('* By the terms', 'NlsHunter') ?></p>
         </div>
+        -->
     </div>
 </form>

@@ -47,12 +47,16 @@ class NlsHunter_modules
         $jobs = $this->model->getJobHunterExecuteNewQuery2();
 
         $companyOptions = [
-            ['id' => 0, 'value' => 'Company 0'],
-            ['id' => 1, 'value' => 'Company 1'],
-            ['id' => 2, 'value' => 'Company 2'],
+            ['id' => 0, 'value' => 'AVIS'],
+            ['id' => 1, 'value' => 'CADILLAC'],
+            ['id' => 2, 'value' => 'CHEVROLET'],
+            ['id' => 4, 'value' => 'ISUZU'],
         ];
 
         ob_start();
+        echo render('mainImage', [
+            'src' => get_template_directory_uri() . '/images/people-transparent-mobile.png'
+        ]);
 
         echo render('job/applicationForm', [
             'jobOptions' => $this->model->listItemsToSelectOptions($jobs['list'], 'JobCode', 'JobTitle'),

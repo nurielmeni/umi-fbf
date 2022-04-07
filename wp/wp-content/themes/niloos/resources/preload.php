@@ -1,1 +1,1 @@
-<div class="leading-none leading-tight relative z-20 mt-8 md:-mt-20 md:max-w-40vw  md:text-right"></div>
+<div class="leading-none leading-tight relative z-20 md:max-w-40vw  md:text-right hidden md:block  absolute bottom-20 lg:bottom-24 xl:bottom-32"></div>

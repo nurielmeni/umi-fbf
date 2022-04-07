@@ -1,0 +1,1 @@
+<img src="<?= $src ?>" alt="" class="full-width-image md:hidden">

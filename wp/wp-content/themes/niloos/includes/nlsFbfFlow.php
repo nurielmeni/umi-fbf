@@ -108,22 +108,15 @@ function add_flow_elements_general_section($wp_customize, $panel)
 // [nls-fbf-flow numberElements=""] shortcode
 function nls_fbf_flow($atts)
 {
-  $a = shortcode_atts(array(
-    'num' => NLS_FLOW_ELEMENTS
-  ), $atts);
-  $numberElements = $a['num'];
+  $numberElements = $atts['num'];
 
-  $separete_image = get_theme_mod('nls_flow_element_separete_image');
-  $image_size = get_theme_mod('nls_flow_element_media_image_size');
-
-  $html = '<section class="nls-fbf-flow-wrapper nls-main-row">';
+  $html = '<section class="hidden md:flex nls-fbf-flow-wrapper relative z-50 items-baseline gap-4 m-auto mx-8">';
 
   for ($index = 1; $index <= $numberElements; $index++) {
     $title = get_theme_mod('nls_flow_element_field_title_' . $index);
-    $content = get_theme_mod('nls_flow_element_field_content_' . $index);
+    $imageName = get_theme_mod('nls_flow_element_field_content_' . $index);
 
-    $html .= elementDesign($title, $content);
-    $html .= $index < $numberElements ? '<img width="' . $image_size . '" src="' . $separete_image . '" role="presentation" />' : '';
+    $html .= elementDesign($title, $imageName, $index);
   }
 
   $html .= '</section>';
@@ -131,11 +124,13 @@ function nls_fbf_flow($atts)
   return $html;
 }
 
-function elementDesign($title, $content)
+function elementDesign($title, $imageName, $i)
 {
   $html =  '<div class="flow-element-card">';
-  $html .= ' <h3 class="flow-element-title">' . $title . '</h3>';
-  $html .= ' <p class="flow-element-content">' . $content . '</p>';
+  $html .= '<p class="flow-element-content">';
+  $html .= '<img src="' . get_template_directory_uri() . '/images/svg/' . $imageName . '" alt="" class="inline-block h-12 lg:h-24">';
+  $html .= '<span class="' . ($i === 3 ? 'max-w-180' : 'max-w-90 lg:max-w-180') . ' inline-flex mx-2">' .  html_entity_decode($title) . '</span>';
+  $html .= '</p>';
   $html .= '</div>';
 
   return $html;
