@@ -11,6 +11,39 @@ include_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
  * @subpackage NlsHunter/public
  */
 
+class ApplicationDetails
+{
+    public $sid = '';
+    public $friendName = '';
+    public $friendCell = '';
+    public $friendArea = '';
+    public $friendJobCode = '';
+    public $employeeName = '';
+    public $employeeId = '';
+    public $company = '';
+
+    public function __construct($data)
+    {
+        foreach ($data as $key => $value) {
+            $prop = $this->dashesToCamelCase($key);
+            if (!property_exists($this, $prop)) continue;
+
+            $this->$prop = $value;
+        }
+    }
+
+    private function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
+    {
+
+        $str = str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+
+        if (!$capitalizeFirstCharacter) {
+            $str[0] = strtolower($str[0]);
+        }
+
+        return $str;
+    }
+}
 /**
  * The public-facing functionality of the plugin.
  *
@@ -27,12 +60,7 @@ class NlsHunter_Public
      * Fields names
      */
     const SID = 'sid';
-
-    const JOB_CODE = 'job-code';
-    const FULL_NAME = 'fullname';
-    const PHONE = 'phone';
-    const EMAIL = 'email';
-    const CV_FILE = 'cv-file';
+    const CV_FILE = 'cv_file';
 
     /**
      * The ID of this plugin.
@@ -171,21 +199,6 @@ class NlsHunter_Public
         file_put_contents($logFile, $data, FILE_APPEND);
     }
 
-    private function getFields()
-    {
-        $fields = [];
-
-        $fields[self::SID] = ['label' => __('Supplier Id', 'NlsHunter'), 'value' => isset($_POST[self::SID]) ? $_POST[self::SID] : ""];
-        $fields[self::JOB_CODE] = ['label' => __('Job Code', 'NlsHunter'), 'value' => isset($_POST[self::JOB_CODE]) ? $_POST[self::JOB_CODE] : []];
-
-        $fields[self::FULL_NAME] = ['label' => __('Full Name', 'NlsHunter'), 'value' => isset($_POST[self::FULL_NAME]) ? $_POST[self::FULL_NAME] : []];
-        $fields[self::PHONE] = ['label' => __('Phone', 'NlsHunter'), 'value' => isset($_POST[self::PHONE]) ? $_POST[self::PHONE] : []];
-        $fields[self::EMAIL] = ['label' => __('Email', 'NlsHunter'), 'value' => isset($_POST[self::EMAIL]) ? $_POST[self::EMAIL] : []];
-        //$fields[self::CV_FILE] = ['label' => __('CV File', 'NlsHunter'), 'value' => isset($_POST[self::CV_FILE]) ? $_POST[self::CV_FILE] : []];
-
-        return $fields;
-    }
-
     /**
      * Get the CV file for the applicable friend
      * the CV file uploads temporarily and assigned a name
@@ -230,7 +243,7 @@ class NlsHunter_Public
         if (!empty($tmpCvFile)) array_push($files, $tmpCvFile);
 
         // 3. Sent email with file attachments
-        $jobCode = $fields[self::JOB_CODE]['value'];
+        $jobCode = $fields->friendJobCode;
         $count += $this->sendHtmlMail($jobCode, $files, $fields, 0) ? 1 : 0;
 
         // 4. Remove temp files
@@ -246,7 +259,7 @@ class NlsHunter_Public
      */
     public function apply_cv_function()
     {
-        $fields = $this->getFields();
+        $fields = new ApplicationDetails($_POST);
 
         $applyCount = $this->apply_job($fields);
 
@@ -330,7 +343,7 @@ class NlsHunter_Public
         }
 
         do {
-            $tempFile = $cv_dirname . 'CV_FILE_' . mt_rand(100, 999) . '.' . $fileExt;
+            $tempFile = $cv_dirname . '/CV_FILE_' . mt_rand(100, 999) . '.' . $fileExt;
         } while (file_exists($tempFile));
 
         return $tempFile;
@@ -349,11 +362,11 @@ class NlsHunter_Public
         }
 
         // Write the data
-        foreach ($fields as $key => $field) {
-            if (!is_array($field['value']) && empty($field['value'])) continue;
+        foreach ($fields as $key => $value) {
+            if (empty($value)) continue;
             if (strpos($key, 'friend') === false) continue;
 
-            $dataLine = $field['label'] . ': ' . (is_array($field['value']) ? $field['value'][$i] : $field['value']) . "\r\n";
+            $dataLine = __($key, 'NlsHunter') . ': ' . $value  . "\r\n";
 
             if (fwrite($handle, $dataLine) === FALSE) break;
         }
@@ -385,28 +398,28 @@ class NlsHunter_Public
 
         // Applying Person
         $applyingPerson = $xml_obj->addChild('ApplyingPerson');
-        $applyingPerson->addChild('EntityLocalName', $fields[self::FULL_NAME]['value']);
+        $applyingPerson->addChild('EntityLocalName', $fields->friendName);
 
-        $phoneData = $this->getPhoneData($fields[self::PHONE]['value']);
+        $phoneData = $this->getPhoneData($fields->friendCell);
         $phoneInfo = $applyingPerson->addChild('Phones')->addChild('PhoneInfo');
         $phoneInfo->addChild('CountryCode', $phoneData['CountryCode']);
         $phoneInfo->addChild('AreaCode', $phoneData['AreaCode']);
         $phoneInfo->addChild('PhoneNumber', $phoneData['PhoneNumber']);
         $phoneInfo->addChild('PhoneType', $phoneData['PhoneType']);
 
-        $applyingPerson->addChild('SupplierId', $fields[self::SID]['value']);
+        $applyingPerson->addChild('SupplierId', $fields->sid);
 
         // Notes
         $applicant_notes = __('Applicant form data: ', 'NlsHunter') . "\r\n";
         // Change the $fields value for strongSide to include the name and not the id
-        foreach ($fields as $key => $field) {
-            if (!is_array($field['value']) && empty($field['value'])) continue;
-            $applicant_notes .= $field['label'] . ': ' . (is_array($field['value']) ? $field['value'][$i] : $field['value']) . "\r\n";
+        foreach ($fields as $key => $value) {
+            if (empty($value)) continue;
+            $applicant_notes .= __($key, 'NlsHunter') . ': ' . $value . "\r\n";
         }
         $xml_obj->addChild('Notes', $applicant_notes);
 
         // Supplier ID
-        $xml_obj->SupplierId = $fields[self::SID]['value'];
+        $xml_obj->SupplierId = $fields->sid;
 
         $ncaiFile = $this->getTempFile('ncai');
         $xml_obj->asXML($ncaiFile);
@@ -426,7 +439,7 @@ class NlsHunter_Public
         array_push($headers, 'From: ' . $fromName . ' <' . $fromMail . '>');
         if (strlen($bcc) > 0) array_push($headers, 'Bcc: ' . $bcc);
 
-        $subject = __('CV Applied from Reichman Jobs Fair Site', 'NlsHunter') . ': ';
+        $subject = __('CV Applied from UMI Jobs Site', 'NlsHunter') . ': ';
         $subject .= $jobcode ? $jobcode : $msg;
 
         $attachments = $files ?: [];

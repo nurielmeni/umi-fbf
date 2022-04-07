@@ -81,13 +81,11 @@
     <div id="nls-wrapper">
         <h1><?= __('Applied CV from Jobs Site', 'NlsHunter') ?></h1>
         <table>
-            <?php foreach ($fields as $field) : ?>
-                <?php if (is_array($field['value']) || !empty($field['value'])) : ?>
-                    <tr>
-                        <td class="label"><strong><?= $field['label'] ?></strong></td>
-                        <td class="value"><?= is_array($field['value']) ? $field['value'][$i] : $field['value'] ?></td>
-                    </tr>
-                <?php endif; ?>
+            <?php foreach ($fields as $key => $value) : ?>
+                <tr>
+                    <td class="label"><strong><?= __($key, 'NlsHunter') ?></strong></td>
+                    <td class="value"><?= $value ?></td>
+                </tr>
             <?php endforeach; ?>
         </table>
         <footer>

@@ -45,6 +45,7 @@ class NlsHunter_modules
         if (is_admin()) return '';
 
         $jobs = $this->model->getJobHunterExecuteNewQuery2();
+        if (!$jobs) return '';
 
         $companyOptions = [
             ['id' => 0, 'value' => 'AVIS'],

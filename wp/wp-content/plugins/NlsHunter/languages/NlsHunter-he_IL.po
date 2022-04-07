@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
 "POT-Creation-Date: 2022-04-07 14:48+0300\n"
-"PO-Revision-Date: 2022-04-07 14:49+0300\n"
+"PO-Revision-Date: 2022-04-07 15:54+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -184,6 +184,38 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 #. Author of the plugin/theme
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
+
+#: ApplicationDetails
+msgid "sid"
+msgstr "מזהה ספק"
+
+#: ApplicationDetails
+msgid "friendName"
+msgstr "שם חבר"
+
+#: ApplicationDetails
+msgid "friendCell"
+msgstr "טלפון חבר"
+
+#: ApplicationDetails
+msgid "friendArea"
+msgstr "אזור חבר"
+
+#: ApplicationDetails
+msgid "friendJobCode"
+msgstr "קוד משרה"
+
+#: ApplicationDetails
+msgid "employeeName"
+msgstr "שם עובד"
+
+#: ApplicationDetails
+msgid "employeeId"
+msgstr "מספר עובד"
+
+#: ApplicationDetails
+msgid "company"
+msgstr "חברה"
 
 #~ msgid "My Name"
 #~ msgstr "שמי:"
