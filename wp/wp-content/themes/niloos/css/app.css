@@ -480,9 +480,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 782px) {
   .container {
-    max-width: 768px;
+    max-width: 782px;
   }
 }
 
@@ -896,12 +896,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
-.font-light {
-  font-weight: 300;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .leading-none {
@@ -1157,7 +1157,7 @@ main > .container {
   padding-right: 2.75rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 782px) {
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;

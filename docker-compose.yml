@@ -23,7 +23,7 @@ services:
 
     # For MAC M1
     platform: linux/x86_64
-    
+
     image: phpmyadmin/phpmyadmin
     ports:
       - 8088:80
