@@ -1210,6 +1210,10 @@ main > .container {
     bottom: 6rem;
   }
 
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:h-24 {
     height: 6rem;
   }
@@ -1220,6 +1224,10 @@ main > .container {
 
   .lg\:max-w-180 {
     max-width: 180px;
+  }
+
+  .lg\:text-right {
+    text-align: right;
   }
 }
 
