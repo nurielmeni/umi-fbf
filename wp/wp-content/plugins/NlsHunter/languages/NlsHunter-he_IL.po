@@ -117,7 +117,7 @@ msgstr "אזור מגורים"
 
 #: templates/job/applicationForm.php:46
 msgid "What job?"
-msgstr "בול המשרה שחיפש/ה"
+msgstr "משרה"
 
 #: templates/job/applicationForm.php:51
 msgid "Append CV File"
