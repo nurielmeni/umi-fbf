@@ -106,7 +106,7 @@ require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
                 <button class="apply-job border-2 py-1 px-12 mt-6 bg-white font-bold rounded-full"><?= __('Send >>', 'NlsHunter') ?></button>
             </div>
             <div class="form-footer">
-                <div class="help-block"></div>
+                <div class="help-block text-white"></div>
             </div>
         </div>
         <!--
