@@ -43,7 +43,7 @@ require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
                     'options' => $jobOptions,
                     'value' => null,
                     'selectWrapClass' => 'w-full',
-                    'placeHolder' => __('What job?', 'NlsHunter')
+                    'placeHolder' => __('Job', 'NlsHunter')
                 ]) ?>
 
                 <!--  CV FILE 

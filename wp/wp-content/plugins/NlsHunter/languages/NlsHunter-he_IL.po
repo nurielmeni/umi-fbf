@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NlsHunter\n"
-"POT-Creation-Date: 2022-04-07 14:48+0300\n"
-"PO-Revision-Date: 2022-04-07 15:54+0300\n"
+"POT-Creation-Date: 2022-05-11 00:13+0300\n"
+"PO-Revision-Date: 2022-05-11 00:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: NlsHunter.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -69,34 +69,15 @@ msgstr "אין אפשרות להתחבר לשירותי Search"
 msgid "Error: Search Services: "
 msgstr "שגיאה: שירותי חיפוש"
 
-#: public/class-NlsHunter-public.php:178
-msgid "Supplier Id"
-msgstr "מזהה ספק"
-
-#: public/class-NlsHunter-public.php:179
-msgid "Job Code"
-msgstr "קוד משרה"
-
-#: public/class-NlsHunter-public.php:181 templates/job/applicationForm.php:18
-#: templates/job/applicationForm.php:73
-msgid "Full Name"
-msgstr "שם מלא"
-
-#: public/class-NlsHunter-public.php:182
-msgid "Phone"
-msgstr "טלפון"
-
-#: public/class-NlsHunter-public.php:183 templates/job/applicationForm.php:91
-msgid "Email"
-msgstr "דוא\"ל"
-
-#: public/class-NlsHunter-public.php:400
+#: public/class-NlsHunter-public.php:413
 msgid "Applicant form data: "
 msgstr "פרטי החבר/ה שלי:"
 
-#: public/class-NlsHunter-public.php:429
-msgid "CV Applied from Reichman Jobs Fair Site"
-msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
+#: public/class-NlsHunter-public.php:442
+#, fuzzy
+#| msgid "Applied CV from Jobs Site"
+msgid "CV Applied from UMI Jobs Site"
+msgstr "קורות חיים נשלחו מאתר משרות"
 
 #: templates/form/nlsFileField.php:19 templates/form/nlsInputField.php:21
 #: templates/form/nlsSelectField.php:22
@@ -107,6 +88,10 @@ msgstr "לא חובה"
 msgid "My friend details:"
 msgstr "פרטי החבר/ה שלי:"
 
+#: templates/job/applicationForm.php:18 templates/job/applicationForm.php:73
+msgid "Full Name"
+msgstr "שם מלא"
+
 #: templates/job/applicationForm.php:27
 msgid "Cell"
 msgstr "טלפון"
@@ -116,7 +101,7 @@ msgid "Area"
 msgstr "אזור מגורים"
 
 #: templates/job/applicationForm.php:46
-msgid "What job?"
+msgid "Job"
 msgstr "משרה"
 
 #: templates/job/applicationForm.php:51
@@ -130,6 +115,10 @@ msgstr "הפרטים שלי:"
 #: templates/job/applicationForm.php:82
 msgid "Employee ID"
 msgstr "מס' עובד/ת"
+
+#: templates/job/applicationForm.php:91
+msgid "Email"
+msgstr "דוא\"ל"
 
 #: templates/job/applicationForm.php:101
 msgid "Company"
@@ -185,37 +174,44 @@ msgstr ".‫API fot Niloosoft HunterHRMS System"
 msgid "Meni Nurie"
 msgstr "מני נוריאל"
 
-#: ApplicationDetails
-msgid "sid"
-msgstr "מזהה ספק"
+#~ msgid "Supplier Id"
+#~ msgstr "מזהה ספק"
 
-#: ApplicationDetails
-msgid "friendName"
-msgstr "שם חבר"
+#~ msgid "Job Code"
+#~ msgstr "קוד משרה"
 
-#: ApplicationDetails
-msgid "friendCell"
-msgstr "טלפון חבר"
+#~ msgid "Phone"
+#~ msgstr "טלפון"
 
-#: ApplicationDetails
-msgid "friendArea"
-msgstr "אזור חבר"
+#~ msgid "CV Applied from Reichman Jobs Fair Site"
+#~ msgstr "קורות חיים נשלחו מאתר יריד משרות רייכמן"
 
-#: ApplicationDetails
-msgid "friendJobCode"
-msgstr "קוד משרה"
+#~ msgid "What job?"
+#~ msgstr "משרה"
 
-#: ApplicationDetails
-msgid "employeeName"
-msgstr "שם עובד"
+#~ msgid "sid"
+#~ msgstr "מזהה ספק"
 
-#: ApplicationDetails
-msgid "employeeId"
-msgstr "מספר עובד"
+#~ msgid "friendName"
+#~ msgstr "שם חבר"
 
-#: ApplicationDetails
-msgid "company"
-msgstr "חברה"
+#~ msgid "friendCell"
+#~ msgstr "טלפון חבר"
+
+#~ msgid "friendArea"
+#~ msgstr "אזור חבר"
+
+#~ msgid "friendJobCode"
+#~ msgstr "קוד משרה"
+
+#~ msgid "employeeName"
+#~ msgstr "שם עובד"
+
+#~ msgid "employeeId"
+#~ msgstr "מספר עובד"
+
+#~ msgid "company"
+#~ msgstr "חברה"
 
 #~ msgid "My Name"
 #~ msgstr "שמי:"
@@ -293,9 +289,6 @@ msgstr "חברה"
 
 #~ msgid "You can define each search as an agent in the personal area"
 #~ msgstr "ניתן להגדיר כל חיפוש כסוכן חכם דרך האיזור האישי"
-
-#~ msgid "Jobs"
-#~ msgstr "משרות"
 
 #~ msgid "More Results"
 #~ msgstr "תוצאות נוספות"
