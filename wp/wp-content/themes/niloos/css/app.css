@@ -480,9 +480,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 782px) {
+@media (min-width: 822px) {
   .container {
-    max-width: 782px;
+    max-width: 822px;
   }
 }
 
@@ -522,8 +522,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 0px;
 }
 
+.bottom-7 {
+  bottom: 1.75rem;
+}
+
 .bottom-20 {
   bottom: 5rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.left-8 {
+  left: 2rem;
 }
 
 .z-10 {
@@ -656,12 +668,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 680px;
 }
 
-.w-5 {
-  width: 1.25rem;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-10\/12 {
@@ -682,6 +694,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-90 {
   max-width: 90px;
+}
+
+.max-w-40vw {
+  max-width: 40vw;
 }
 
 .flex-grow {
@@ -864,10 +880,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 2.75rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
-
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -1039,12 +1051,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 body {
-  background-image: linear-gradient(
-    -18deg,
-    #030c33 0%,
-    #182984 65%,
-    #2e48d9 100%
-  ) !important;
+  background-image: linear-gradient(-18deg,
+      #030c33 0%,
+      #182984 65%,
+      #2e48d9 100%) !important;
   width: 100%;
   min-height: 100vh;
 }
@@ -1055,12 +1065,10 @@ body {
 }
 
 .bg-gradient {
-  background-image: linear-gradient(
-    -18deg,
-    #030c33 0%,
-    #182984 65%,
-    #2e48d9 100%
-  );
+  background-image: linear-gradient(-18deg,
+      #030c33 0%,
+      #182984 65%,
+      #2e48d9 100%);
 }
 
 /* md */
@@ -1072,48 +1080,46 @@ body {
     border-top-left-radius: 0;
     padding-left: 25%;
   }
+
+  .vh-56 {
+    height: 56vh;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 781px) {
-  main
-    .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column:not(:only-child) {
+  main .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
     flex-basis: 100% !important;
   }
 }
 
 @media (max-width: 767px) {
-  .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
     flex-basis: 100% !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1280px) {
-  .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column:not(:only-child) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
     flex-basis: calc(50% - var(--wp--style--block-gap, 2em) / 2) !important;
     flex-grow: 0;
   }
 
-  .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column:nth-child(2n) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:nth-child(2n) {
     margin-right: var(--wp--style--block-gap, 2em);
   }
 }
 
 @media (min-width: 1280px) {
-  .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
     flex-basis: 0;
     flex-grow: 1;
   }
 
-  .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column[style*="flex-basis"] {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*="flex-basis"] {
     flex-grow: 0;
   }
 
-  .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column:not(:first-child) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
     margin-right: var(--wp--style--block-gap, 2em);
   }
 }
@@ -1144,7 +1150,7 @@ body {
   font-size: calc(1.8vw + 12px) !important;
 }
 
-main > .container {
+main>.container {
   width: 94% !important;
   max-width: 94% !important;
 }
@@ -1157,7 +1163,7 @@ main > .container {
   padding-right: 2.75rem;
 }
 
-@media (min-width: 782px) {
+@media (min-width: 822px) {
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1179,12 +1185,24 @@ main > .container {
     min-height: 280px;
   }
 
+  .md\:min-h-400 {
+    min-height: 400px;
+  }
+
+  .md\:min-h-680 {
+    min-height: 680px;
+  }
+
   .md\:w-input-md {
     width: calc(50% - 8px);
   }
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:max-w-50vw {
+    max-width: 50vw;
   }
 
   .md\:justify-start {
@@ -1210,10 +1228,6 @@ main > .container {
     bottom: 6rem;
   }
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:h-24 {
     height: 6rem;
   }
@@ -1224,10 +1238,6 @@ main > .container {
 
   .lg\:max-w-180 {
     max-width: 180px;
-  }
-
-  .lg\:text-right {
-    text-align: right;
   }
 }
 

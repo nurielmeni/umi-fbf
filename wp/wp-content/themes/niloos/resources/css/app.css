@@ -30,7 +30,7 @@
   font-size: calc(1.8vw + 12px) !important;
 }
 
-main > .container {
+main>.container {
   width: 94% !important;
   max-width: 94% !important;
 }

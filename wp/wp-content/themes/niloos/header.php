@@ -34,7 +34,7 @@ include_once 'includes/headerLogo.php';
 			</div>
 		</header>
 
-		<div id="content" class="site-content flex-grow min-h-680 lg:min-h-auto pb-24 md:pb-52">
+		<div id="content" class="site-content flex-grow md:min-h-680 lg:min-h-auto pb-24 md:pb-52">
 
 
 

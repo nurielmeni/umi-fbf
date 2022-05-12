@@ -39,9 +39,16 @@ module.exports = {
       maxWidth: {
         '180': '180px',
         '90': '90px',
-        '480': '480px'
+        '480': '480px',
+        '40vw': '40vw',
+        '50vw': '50vw'
       },
       minWidth: {
+      },
+      maxHeight: {
+        '50vw': '50vw',
+        '70vh': '70vh',
+        '80vh': '80vh'
       },
       minHeight: {
         '120': '120px',
@@ -49,7 +56,8 @@ module.exports = {
         '280': '280px',
         '360': '360px',
         '400': '400px',
-        '680': '680px'
+        '680': '680px',
+        '50vw': '50vw'
       },
       rotate: {
         '270': '270deg',
@@ -107,7 +115,7 @@ module.exports = {
     },
     screens: {
       sm: "640px",
-      md: "782px",
+      md: "822px",
       lg: "1280px",
       xl: "1640px",
     },

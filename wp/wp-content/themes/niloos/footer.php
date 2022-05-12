@@ -6,7 +6,7 @@
 
 <?php do_action('reichman_content_after'); ?>
 
-<footer id="colophon" class="site-footer pb-3" role="contentinfo">
+<footer id="colophon" class="site-footer absolute w-full bottom-7" role="contentinfo">
 	<?php do_action('reichman_footer'); ?>
 
 	<!--

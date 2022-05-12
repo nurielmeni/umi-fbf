@@ -97,7 +97,6 @@ class NlsHunter_Public
     public function __construct($NlsHunter, $version, $debug = false)
     {
         $this->NlsHunter = $NlsHunter;
-        $this->model = $NlsHunter->get_model();
         $this->version = $version;
         $this->debug = $debug;
     }

@@ -1,1 +1,1 @@
-<div class="leading-none leading-tight relative z-20 md:max-w-40vw md:text-right hidden md:block absolute bottom-20 lg:bottom-24 xl:bottom-32"></div>
+<div class="leading-none leading-tight relative z-20 md:w-1/2 max-w-40vw md:max-w-50vw md:min-h-400 md:text-right hidden md:block absolute bottom-20 bottom-8 left-8 lg:bottom-24 xl:bottom-32 flex justify-center items-center md:justify-start text-center"></div>
