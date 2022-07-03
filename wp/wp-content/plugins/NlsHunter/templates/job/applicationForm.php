@@ -84,21 +84,11 @@ require_once ABSPATH . 'wp-content/plugins/NlsHunter/renderFunction.php';
 
                 <!--  EMAIL -->
                 <?= render('form/nlsInputField', [
-                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
+                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-2lg',
                     'class' => 'py-1 px-2 rounded-md w-full',
                     'name' => 'employee-email',
                     'validators' => ['required email'],
                     'placeHolder' => __('Email', 'NlsHunter')
-                ]) ?>
-
-                <!-- Company -->
-                <?= render('form/nlsSelectField', [
-                    'wrapperClass' => 'w-full md:w-input-md lg:w-input-lg',
-                    'name' => 'company',
-                    'options' => $companyOptions,
-                    'value' => null,
-                    'selectWrapClass' => 'w-full',
-                    'placeHolder' => __('Company', 'NlsHunter')
                 ]) ?>
 
             </div>

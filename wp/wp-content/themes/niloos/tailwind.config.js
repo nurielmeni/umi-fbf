@@ -34,7 +34,8 @@ module.exports = {
       ),
       width: {
         'input-lg': 'calc(25% - 10px)',
-        'input-md': 'calc(50% - 8px)'
+        'input-md': 'calc(50% - 8px)',
+        'input-2lg': 'calc(50% - 20px)'
       },
       maxWidth: {
         '180': '180px',
